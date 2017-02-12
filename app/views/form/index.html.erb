@@ -1,0 +1,25 @@
+<h1>Form</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Attack</th>
+    <th>Defence</th>
+    <th>Life</th>
+    <th>Pet</th>
+  </tr>
+  <% for unit in @units%>
+    <tr>
+      <td><%= unit.name %></td>
+      <td><%= unit.attack %></td>
+      <td><%= unit.defence %></td>
+      <td><%= unit.life %></td>
+      <td><%= unit.pet.name %></td>
+      <td><%= link_to "show", form_path(unit) %></td>
+      <td><%= link_to "remove", form_path(unit), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<a href="/form/new">Create new Unit</a>
+<a href="/pet">See Pets</a>

@@ -1,0 +1,27 @@
+<%= form_tag('/form', method: 'POST') do %>
+  <div>
+    <%= text_field_tag('name', 'peasant') %>
+  </div>
+  <div>
+    <%= number_field_tag('attack', 0) %>
+  </div>
+  <div>
+    <%= number_field_tag('defence', 0) %>
+  </div>
+  <div>
+    <%= number_field_tag('life', 5) %>
+  </div>
+  <div>
+    <% pet_options = [] 
+      @pets.each do |pet|
+        pet_options.push([pet.name, pet.id])
+      end
+    %>
+    <%= select_tag('pet', options_for_select(pet_options)) %>
+  </div>
+  <div>
+    <%= submit_tag('Create') %>
+  </div>
+<% end %>
+
+<a href="/form">Back</a>

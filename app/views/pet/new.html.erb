@@ -1,0 +1,6 @@
+<%= form_tag('/pet', method: 'POST') do %>
+  <%= text_field_tag('name', 'cat') %>
+  <%= submit_tag('Create') %>
+<% end %>
+
+<a href="/pet">Back</a>
